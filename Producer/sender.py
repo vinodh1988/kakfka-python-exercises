@@ -7,4 +7,4 @@ topic="messages"
 producer=KafkaProducer(bootstrap_servers=brokers)
 
 def messageSender(message):
-    producer.send('messages',message)
+    producer.send(topic,message.encode('utf-8'))
